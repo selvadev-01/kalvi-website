@@ -1,0 +1,26 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "side-tab",
+        "value": "*",
+        "files": [
+          "D:\\php\\htdocs\\projects\\02-Education-School\\NextJS\\kalvi-website\\components\\sections\\showcase.tsx"
+        ],
+        "createdAt": "2026-11-11T15:15:47.609Z",
+        "reason": "Claude: L111 is the brand-film corner-bracket decoration (L-shaped saffron brackets on the frame corners) requested by the master prompt in KALVI-EDU-PROMPTS.md, not a card side-tab"
+      },
+      {
+        "rule": "border-accent-on-rounded",
+        "value": "*",
+        "files": [
+          "D:\\php\\htdocs\\projects\\02-Education-School\\NextJS\\kalvi-website\\components\\sections\\showcase.tsx"
+        ],
+        "createdAt": "2026-11-11T15:15:47.613Z",
+        "reason": "Claude: L111 is the brand-film corner-bracket decoration (L-shaped saffron brackets on the frame corners) requested by the master prompt in KALVI-EDU-PROMPTS.md, not a card side-tab"
+      }
+    ]
+  }
+}

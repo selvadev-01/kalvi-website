@@ -1,36 +1,46 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# KALVI — marketing website
 
-## Getting Started
-
-First, run the development server:
+Bilingual (English / தமிழ்) landing page for the KALVI learning app.
+Next.js 14 (App Router) · TypeScript · Tailwind · GSAP ScrollTrigger · Lenis · Framer Motion · Lucide.
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev        # http://localhost:3000
+npm run build && npx next start -p 3100
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Set `NEXT_PUBLIC_SITE_URL` to the live domain before deploying (used for Open Graph URLs).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Where things live
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| What | File |
+|---|---|
+| All copy (English / Tamil) | `content/en.ts`, `content/ta.ts` (shape in `content/types.ts`) |
+| Plans, FAQ, subjects, teachers, testimonials, stats | inside the same content files, as typed arrays |
+| Lenis + GSAP sync, language context | `lib/providers.tsx` |
+| Shared UI (page-turn reveal, titles with underline, buttons, counter, video, film modal, language toggle) | `components/ui.tsx` |
+| Navbar · Hero · Ticker | `components/sections/top.tsx` |
+| Why · How it works · Features · AI Tutor | `components/sections/story.tsx` |
+| Subjects · Brand film · Teachers · Parents · Results | `components/sections/showcase.tsx` |
+| Testimonials · Pricing · FAQ · Download · Footer | `components/sections/convert.tsx` |
 
-## Learn More
+In a title, wrap one word in `*asterisks*` to get the hand-drawn saffron underline.
 
-To learn more about Next.js, take a look at the following resources:
+## Assets (`public/`)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- `images/` hero.jpg, hero-mobile.jpg, ai-tutor.jpg, live-class.jpg, parent-report.jpg, offline.jpg, paper.jpg, phone-hand.png,
+  `subjects/` maths, science, tamil, english, social, exams · `teachers/` t1–t3 · `avatars/` a1–a3
+- `video/` hero-loop (mp4/webm/poster), how-it-works (mp4/webm/poster), brand-film (mp4/webm/poster),
+  reel-ai-tutor, reel-live, reel-progress (mp4/poster)
+- `og.jpg` 1200×630 social image
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Images were generated locally with ComfyUI (Z-Image Turbo); videos were built with HyperFrames.
+Sources: `D:\php\htdocs\projects\prompts\kalvi-assets\`.
 
-## Deploy on Vercel
+## Before going live
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Sample content:** teacher profiles, testimonials, student counts, ratings and the "Loved by 2,00,000+" line are placeholders. Replace them with real data.
+- **People in photos are AI-generated.** Use real faculty photos once available.
+- **Store links / QR code:** the Play Store and App Store buttons and the QR card point to `#download`. Add the real links and a real QR image.
+- **Newsletter form** validates on the client only. Connect it to your email provider.
+- **Brand film is silent:** add a music track and re-render if wanted.

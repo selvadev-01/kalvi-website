@@ -2,26 +2,63 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: auto;
 }
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+}
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+:focus-visible {
+  outline: 2px solid #f2a33a;
+  outline-offset: 3px;
+}
+
+/* subtle handmade-paper grain on Paper sections */
+.paper-tex {
+  background-image: linear-gradient(rgba(251, 248, 241, 0.82), rgba(251, 248, 241, 0.82)), url("/images/paper.jpg");
+  background-size: auto, 512px;
+}
+
+/* brand-film side columns */
+@keyframes col-up {
+  from { transform: translateY(0); }
+  to { transform: translateY(-50%); }
+}
+@keyframes col-down {
+  from { transform: translateY(-50%); }
+  to { transform: translateY(0); }
+}
+.col-up { animation: col-up 40s linear infinite; }
+.col-down { animation: col-down 40s linear infinite; }
+
+/* download phone float */
+@keyframes float {
+  0%, 100% { transform: translateY(-8px); }
+  50% { transform: translateY(8px); }
+}
+.float { animation: float 6s ease-in-out infinite; }
+
+/* mobile menu stagger */
+@keyframes menu-in {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: none; }
+}
+.menu-in { animation: menu-in 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) both; }
+
+@media (prefers-reduced-motion: reduce) {
+  .col-up, .col-down, .float, .menu-in {
+    animation: none !important;
+  }
+  *, *::before, *::after {
+    transition-duration: 0.01ms !important;
   }
 }
