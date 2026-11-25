@@ -1,6 +1,8 @@
 # KALVI — marketing website
 
 Bilingual (English / தமிழ்) landing page for the KALVI learning app.
+
+**Live site:** https://kalvi-website.vercel.app
 Next.js 14 (App Router) · TypeScript · Tailwind · GSAP ScrollTrigger · Lenis · Framer Motion · Lucide.
 
 ```bash
@@ -36,6 +38,10 @@ In a title, wrap one word in `*asterisks*` to get the hand-drawn saffron underli
 
 Images were generated locally with ComfyUI (Z-Image Turbo); videos were built with HyperFrames.
 Sources: `D:\php\htdocs\projects\prompts\kalvi-assets\`.
+
+## Deployment
+
+Live on Vercel (project `kalvi-website`): https://kalvi-website.vercel.app
 
 ## Before going live
 
