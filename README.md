@@ -37,8 +37,6 @@ In a title, wrap one word in `*asterisks*` to get the hand-drawn saffron underli
 - `og.jpg` 1200×630 social image
 
 Images were generated locally with ComfyUI (Z-Image Turbo); videos were built with HyperFrames.
-Sources: `D:\php\htdocs\projects\prompts\kalvi-assets\`.
-
 ## Deployment
 
 Live on Vercel (project `kalvi-website`): https://kalvi-website.vercel.app
